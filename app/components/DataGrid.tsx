@@ -51,8 +51,9 @@ export default function DataGrid({ moduleName, initialDate, columnDefs }: DataGr
 
   const loadData = async () => {
     try {
-      const response = await fetch(`/api/instock/data?name=${moduleName}&date=${currentDate}`);
+      const response = await fetch(`http://localhost:9988/instock/api_data?name=cn_stock_selection&date=2024-11-07`);
       const data = await response.json();
+      console.log(data);
       setRowData(data);
       updateStatusBar();
     } catch (error) {
